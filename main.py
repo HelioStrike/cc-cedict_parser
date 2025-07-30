@@ -114,8 +114,8 @@ def parse_cc_cedict_line(line: str) -> Dict[str, any]:
         # Split by '/' to get individual meanings
         meanings = [meaning.strip() for meaning in meaning_text.split('/') if meaning.strip()]
     
-    # Determine if it's an idiom (typically 4 characters or more in traditional/simplified)
-    is_idiom = len(traditional) >= 4 or len(simplified) >= 4
+    # Determine if it's an idiom by checking if "(idiom)" appears in any of the meanings
+    is_idiom = any("(idiom)" in meaning.lower() for meaning in meanings)
     
     # Get zhuyin directly from traditional Chinese characters
     zhuyin = get_zhuyin_from_characters(traditional)

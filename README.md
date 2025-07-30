@@ -17,7 +17,7 @@ traditional simplified [pinyin] /meaning1/meaning2/.../
 - Extracts pinyin romanization from traditional Chinese characters
 - Extracts zhuyin (bopomofo) from traditional Chinese characters
 - Extracts English meanings
-- Identifies idioms (4+ character entries)
+- Identifies idioms based on "(idiom)" marker in meanings
 - Outputs clean JSON format
 - Handles UTF-8 encoding
 - Robust error handling
@@ -75,7 +75,7 @@ The script generates a JSON file containing an array of objects with the followi
 - `pinyin`: Pinyin romanization (with tone marks) derived from traditional characters
 - `zhuyin`: Zhuyin (bopomofo) phonetic notation derived from traditional characters
 - `meaning`: Array of English definitions
-- `is_idiom`: Boolean indicating if the entry is an idiom (4+ characters)
+- `is_idiom`: Boolean indicating if the entry is an idiom (based on "(idiom)" marker in meanings)
 
 ## Requirements
 
